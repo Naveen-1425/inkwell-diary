@@ -1,25 +1,9 @@
 /* ============================================================
-   Service worker — caches the app shell (HTML/CSS/JS/icons) so
-   the app opens instantly and loads offline. Diary entries
-   themselves still need a connection (they live in Supabase),
-   but the interface itself works without one.
+   Service worker — caches app shell for offline loading
    ============================================================ */
 
-const CACHE_VERSION = "inkwell-v1";
+const CACHE_VERSION = "inkwell-v2";
 const APP_SHELL = [
-  "/",
-  "/index.html",
-  "/login.html",
-  "/signup.html",
-  "/forgot-password.html",
-  "/reset-password.html",
-  "/dashboard.html",
-  "/entry.html",
-  "/calendar.html",
-  "/search.html",
-  "/favorites.html",
-  "/profile.html",
-  "/offline.html",
   "/css/style.css",
   "/js/supabase-client.js",
   "/js/utils.js",
@@ -55,32 +39,29 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
+
+  // Only handle GET requests
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
 
-  // Never cache Supabase API/auth/storage calls — always go to network.
-  if (url.hostname.includes("supabase.co") || url.hostname.includes("supabase.in")) {
-    return;
-  }
+  // Never intercept Supabase calls
+  if (url.hostname.includes("supabase.co")) return;
 
-  // App shell files: cache-first, falling back to network, then offline page.
+  // Never intercept navigation requests — let browser handle HTML pages directly
+  if (request.mode === "navigate") return;
+
+  // Cache-first for static assets (CSS, JS, icons)
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
-      return fetch(request)
-        .then((response) => {
-          if (response && response.status === 200 && url.origin === location.origin) {
-            const clone = response.clone();
-            caches.open(CACHE_VERSION).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() => {
-          if (request.mode === "navigate") {
-            return caches.match("/offline.html");
-          }
-        });
+      return fetch(request).then((response) => {
+        if (response && response.status === 200 && !response.redirected) {
+          const clone = response.clone();
+          caches.open(CACHE_VERSION).then((cache) => cache.put(request, clone));
+        }
+        return response;
+      }).catch(() => null);
     })
   );
 });
