@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkwell — A private place for your thoughts</title>
+<link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#15171F">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+
+<nav class="nav-public">
+  <div class="sidebar-brand"><span class="dot"></span> Inkwell</div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div class="theme-toggle">
+      <button data-theme-btn="midnight" title="Midnight">🌙</button>
+      <button data-theme-btn="paper" title="Paper">☀️</button>
+    </div>
+    <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+    <a href="signup.html" class="btn btn-primary btn-sm">Sign up free</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <p class="eyebrow">A private journal, just for you</p>
+    <h1>Some thoughts deserve<br>a locked drawer, not a feed.</h1>
+    <p class="lead">Inkwell is a quiet place to write down your days — moods, memories, and the small stuff you'd otherwise forget. No ads, no algorithm, no one else reading along.</p>
+    <div class="hero-cta">
+      <a href="signup.html" class="btn btn-primary">Start writing free</a>
+      <a href="#features" class="btn btn-ghost">See what's inside</a>
+    </div>
+  </div>
+  <div class="hero-art margin-rule">
+    <p class="eyebrow" style="margin-bottom:14px;">Today, 9:42 PM</p>
+    <h3 style="margin-bottom:8px;">Slow Sunday</h3>
+    <p style="color:var(--ink-soft);font-size:.92rem;line-height:1.7;">Spent the morning rereading old notes. Funny how a year compresses into a paragraph once it's behind you. Feeling calm about the week ahead —</p>
+    <div class="entry-meta" style="margin-top:18px;">
+      <span class="mood-badge">😌 Calm</span>
+      <span class="pill">Personal</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="features">
+  <div class="section-head">
+    <p class="eyebrow">Features</p>
+    <h2>Everything a journal needs. Nothing it doesn't.</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="card card-hover feature-card">
+      <div class="glyph">✍️</div>
+      <h3>A focused editor</h3>
+      <p>Rich text formatting, autosave, and a word count that fades into the background while you write.</p>
+    </div>
+    <div class="card card-hover feature-card">
+      <div class="glyph">😌</div>
+      <h3>Mood tracking</h3>
+      <p>Tag every entry with how you felt, and watch the pattern form over weeks and months.</p>
+    </div>
+    <div class="card card-hover feature-card">
+      <div class="glyph">🗓️</div>
+      <h3>Calendar view</h3>
+      <p>See your writing — and your moods — laid out across the month at a glance.</p>
+    </div>
+    <div class="card card-hover feature-card">
+      <div class="glyph">🔍</div>
+      <h3>Real search</h3>
+      <p>Find any entry by title, content, tag, mood, or date in seconds.</p>
+    </div>
+    <div class="card card-hover feature-card">
+      <div class="glyph">🔒</div>
+      <h3>Private by design</h3>
+      <p>Row-level security means your entries are visible to exactly one person: you.</p>
+    </div>
+    <div class="card card-hover feature-card">
+      <div class="glyph">🔥</div>
+      <h3>Writing streaks</h3>
+      <p>A gentle nudge to keep the habit, with a streak counter that tracks your consistency.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-raised);border-top:1px solid var(--paper-line);border-bottom:1px solid var(--paper-line);">
+  <div class="section-head">
+    <p class="eyebrow">What people write</p>
+    <h2>Built for the entries you wouldn't post anywhere else.</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="card feature-card">
+      <p style="font-style:italic;color:var(--ink-soft);margin-bottom:14px;">"It's the first journal app I've stuck with longer than a week. The mood chart actually changed how I plan my month."</p>
+      <p style="font-weight:600;font-size:.85rem;">— A daily writer</p>
+    </div>
+    <div class="card feature-card">
+      <p style="font-style:italic;color:var(--ink-soft);margin-bottom:14px;">"Simple enough that I open it every night without thinking about it. That's the whole point."</p>
+      <p style="font-weight:600;font-size:.85rem;">— A student journaling for clarity</p>
+    </div>
+    <div class="card feature-card">
+      <p style="font-style:italic;color:var(--ink-soft);margin-bottom:14px;">"I export a PDF of the year every December. It's become my favorite read of January."</p>
+      <p style="font-weight:600;font-size:.85rem;">— A long-time user</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow">Questions</p>
+    <h2>FAQ</h2>
+  </div>
+  <div style="max-width:680px;">
+    <div class="faq-item">
+      <div class="faq-q">Is my journal really private? <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="faq-a">Yes. Every entry is protected by row-level security at the database level — only your signed-in account can ever read or write your entries.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I export my entries? <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="faq-a">Yes — export a single entry or your entire journal as a TXT or PDF file at any time, from your dashboard.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it work on my phone? <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="faq-a">Inkwell is fully responsive and installable as an app on your home screen, with offline reading support.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is it really free? <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="faq-a">Yes — Inkwell runs entirely on free-tier infrastructure, and that cost stays at zero for personal use.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;">
+  <h2 style="margin-bottom:16px;">Start your first entry tonight.</h2>
+  <p style="color:var(--ink-soft);margin-bottom:26px;">Free to use. No credit card. Two minutes to set up.</p>
+  <a href="signup.html" class="btn btn-primary">Sign up free</a>
+</section>
+
+<footer class="site-footer">
+  <span>© 2026 Inkwell. Built for quiet writing.</span>
+  <span>A private journaling app</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script>
+  initTheme();
+  document.querySelectorAll(".faq-item").forEach(item => {
+    item.querySelector(".faq-q").addEventListener("click", () => item.classList.toggle("open"));
+  });
+</script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

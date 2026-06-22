@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#15171F">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+
+<main class="main" style="max-width:760px;">
+  <div class="topbar">
+    <div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <h1 id="page-title">New entry</h1>
+      <p class="subtitle" id="draft-status">Draft</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-icon" id="favorite-btn" title="Favorite">★</button>
+      <button class="btn btn-ghost btn-sm" id="duplicate-btn" style="display:none;">Duplicate</button>
+      <button class="btn btn-ghost btn-sm" id="archive-btn" style="display:none;">Archive</button>
+      <button class="btn btn-danger btn-sm" id="delete-btn" style="display:none;">Delete</button>
+      <button class="btn btn-primary btn-sm" id="save-btn">Save entry</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <input type="text" id="title" placeholder="Give this entry a title..." style="font-family:var(--font-display);font-size:1.3rem;border:none;background:transparent;padding-left:0;">
+    </div>
+
+    <div class="field">
+      <label>How are you feeling?</label>
+      <div class="mood-picker" id="mood-picker"></div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category"></select>
+      </div>
+      <div class="field">
+        <label for="tags">Tags <span style="font-weight:400;color:var(--ink-faint);">(comma-separated)</span></label>
+        <input type="text" id="tags" placeholder="gratitude, work, travel">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Entry</label>
+      <div class="rt-toolbar">
+        <button type="button" data-cmd="bold"><b>B</b></button>
+        <button type="button" data-cmd="italic"><i>I</i></button>
+        <button type="button" data-cmd="underline"><u>U</u></button>
+        <button type="button" data-cmd="insertUnorderedList">• List</button>
+        <button type="button" data-cmd="insertOrderedList">1. List</button>
+        <button type="button" data-cmd="formatBlock" data-val="blockquote">" Quote</button>
+      </div>
+      <div id="editor" contenteditable="true" data-placeholder="What's on your mind today?"></div>
+      <div class="editor-meta">
+        <span><b id="word-count">0</b> words</span>
+        <span><b id="read-time">0 min</b> read</span>
+        <span id="autosave-note"></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Image</label>
+      <input type="file" id="image-input" accept="image/*">
+      <div id="image-preview" style="margin-top:10px;"></div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/entry.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

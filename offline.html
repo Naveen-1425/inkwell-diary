@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#15171F">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
+  <div>
+    <div style="font-size:3rem;margin-bottom:20px;">✍️</div>
+    <h1 style="font-size:1.5rem;margin-bottom:10px;">You're offline</h1>
+    <p style="color:var(--ink-soft);max-width:300px;margin:0 auto 24px;">No connection right now. Your journal is waiting — entries you've already loaded are still readable.</p>
+    <button class="btn btn-primary" onclick="window.location.reload()">Try again</button>
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script>initTheme();</script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
