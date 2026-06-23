@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#15171F">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+<main class="main">
+  <div class="topbar">
+    <div>
+      <h1 id="greeting">Good morning 👋</h1>
+      <p class="subtitle" id="greeting-sub">Loading your journal...</p>
+    </div>
+    <a href="entry.html" class="btn btn-primary" style="display:none;" id="new-btn">+ New Entry</a>
+  </div>
+  <div class="stat-grid" id="stat-grid">
+    <div class="card stat-card"><div class="skeleton" style="height:28px;width:50%;margin-bottom:8px;"></div><div class="skeleton" style="height:10px;width:70%;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:28px;width:50%;margin-bottom:8px;"></div><div class="skeleton" style="height:10px;width:70%;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:28px;width:50%;margin-bottom:8px;"></div><div class="skeleton" style="height:10px;width:70%;"></div></div>
+    <div class="card stat-card"><div class="skeleton" style="height:28px;width:50%;margin-bottom:8px;"></div><div class="skeleton" style="height:10px;width:70%;"></div></div>
+  </div>
+  <div class="card">
+    <div class="topbar" style="margin-bottom:6px;">
+      <h2 style="font-size:1.1rem;">Recent entries</h2>
+      <a href="search.html" style="font-size:.84rem;color:var(--brass);font-weight:600;">View all →</a>
+    </div>
+    <div id="recent-entries">
+      <div class="skeleton" style="height:64px;margin-bottom:10px;"></div>
+      <div class="skeleton" style="height:64px;margin-bottom:10px;"></div>
+      <div class="skeleton" style="height:64px;"></div>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

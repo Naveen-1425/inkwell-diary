@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Calendar — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#15171F">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+<main class="main">
+  <div class="topbar">
+    <div><h1>Calendar</h1><p class="subtitle">Your writing across the month.</p></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button class="btn btn-icon" id="prev-month">←</button>
+      <span id="month-label" style="font-family:var(--font-display);font-size:1rem;min-width:130px;text-align:center;"></span>
+      <button class="btn btn-icon" id="next-month">→</button>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="cal-grid">
+      <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div>
+      <div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div><div class="cal-dow">Sat</div>
+    </div>
+    <div class="cal-grid" id="cal-grid" style="margin-top:6px;"></div>
+  </div>
+  <div class="card" id="day-detail" style="display:none;">
+    <h2 style="font-size:1rem;margin-bottom:14px;" id="day-detail-title"></h2>
+    <div id="day-detail-entries"></div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sign up — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#15171F">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inkwell">
+</head>
+<body>
+<div class="auth-shell">
+  <div class="card auth-card">
+    <p class="eyebrow">Inkwell</p>
+    <h1>Create your journal</h1>
+    <p class="lead">Two minutes to set up, then it's all yours.</p>
+    <form id="signup-form">
+      <div class="field"><label for="name">Full name</label><input type="text" id="name" required placeholder="Your name" autocomplete="name"></div>
+      <div class="field"><label for="email">Email</label><input type="email" id="email" required placeholder="you@example.com" autocomplete="email"></div>
+      <div class="field"><label for="password">Password</label><input type="password" id="password" required minlength="8" placeholder="At least 8 characters" autocomplete="new-password"></div>
+      <div class="field"><label for="confirm-password">Confirm password</label><input type="password" id="confirm-password" required minlength="8" placeholder="Repeat your password" autocomplete="new-password"></div>
+      <p class="error-text" id="form-error"></p>
+      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:4px;">Create account</button>
+    </form>
+    <p class="auth-foot">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script>initTheme(); redirectIfAuthed(); initSignupForm();</script>
+</body>
+</html>

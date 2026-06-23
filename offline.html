@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Offline — Inkwell</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#15171F">
+</head>
+<body>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
+  <div>
+    <div style="font-size:3rem;margin-bottom:18px;">✍️</div>
+    <h1 style="font-size:1.4rem;margin-bottom:10px;">You're offline</h1>
+    <p style="color:var(--ink-soft);max-width:280px;margin:0 auto 22px;">No connection right now. Your journal is waiting.</p>
+    <button class="btn btn-primary" onclick="window.location.reload()">Try again</button>
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script>initTheme();</script>
+</body>
+</html>
